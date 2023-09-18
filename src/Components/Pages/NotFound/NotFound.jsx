@@ -1,6 +1,6 @@
 import { React, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./NotFound.scss;"
+import "./NotFound.scss";
 
 const NotFound = () => {
   /* Creating a variable to use as useNavigate hook */
@@ -15,9 +15,12 @@ const NotFound = () => {
       navigate("/");
     }, 15000);
   }, []);
-  return( <h1>Siden blev ikke fundet</h1>;
-  <p>Du kommer tilbage til forsidet om 15 sekunder </p>;
-  )
+  return (
+    <>
+      <h1>Siden blev ikke fundet</h1>
+      <p>Du kommer tilbage til forsidet om 15 sekunder </p>
+    </>
+  );
 };
 
 export default NotFound;

@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./NavBar.scss";
-import { Logo } from "../../../Assets/Layout/logo.svg";
+import Logo from "../../../Assets/SVG/logo.svg";
+import Login from "../../../Assets/Layout/icon-unlock.svg";
+
 const NavBar = () => {
   /* Setting up the variable to handle the state of mobile menu */
 
@@ -11,8 +13,12 @@ const NavBar = () => {
     <>
       {/* Start of the navigation component */}
       <nav className="navigation">
-        {/* Logo */}
-        <img className="brand-name" src={Logo} alt="logo" />
+        <div>
+          {/* Logo */}
+          <Link to="/">
+            <img className="brand-name" src={Logo} alt="logo" />
+          </Link>
+        </div>
         {/* Button with a onclick event from useState hook used  for  a hamburger menu */}
         <button
           className="hamburger"
@@ -35,19 +41,19 @@ const NavBar = () => {
               {" "}
               <path
                 d="M4 18L20 18"
-                stroke="#d39d5b"
+                stroke="#6da830"
                 strokeWidth="2"
                 strokeLinecap="round"
               ></path>{" "}
               <path
                 d="M4 12L20 12"
-                stroke="#d39d5b"
+                stroke="#6da830"
                 strokeWidth="2"
                 strokeLinecap="round"
               ></path>{" "}
               <path
                 d="M4 6L20 6"
-                stroke="#d39d5b"
+                stroke="#6da830"
                 strokeWidth="2"
                 strokeLinecap="round"
               ></path>{" "}
@@ -66,52 +72,50 @@ const NavBar = () => {
               <NavLink
                 to="/"
                 style={({ isActive }) => ({
-                  color: isActive ? "#d39d5b" : "#707070",
+                  color: isActive ? "#6da830" : "black",
+                  borderTop: isActive ? "solid 1px grey" : "none",
                 })}
               >
-                FORSIDE
+                Forside
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/events"
+                to="/sortering"
                 style={({ isActive }) => ({
-                  color: isActive ? "#d39d5b" : "#707070",
+                  color: isActive ? "#6da830" : "black",
+                  borderTop: isActive ? "solid 1px grey" : "none",
                 })}
               >
-                FORESTILLINGER & EVENTS
+                Sortering
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/actors"
+                to="/stationer"
                 style={({ isActive }) => ({
-                  color: isActive ? "#d39d5b" : "#707070",
+                  color: isActive ? "#6da830" : "black",
+                  borderTop: isActive ? "solid 1px grey" : "none",
                 })}
               >
-                SKUESPILLERE
+                Genbrugsstationer
               </NavLink>
             </li>
             <li>
-              {loginData ? (
-                <NavLink
-                  to="/login"
-                  style={({ isActive }) => ({
-                    color: isActive ? "#d39d5b" : "#707070",
-                  })}
-                >
-                  MIN SIDE
-                </NavLink>
-              ) : (
-                <NavLink
-                  to="/login"
-                  style={({ isActive }) => ({
-                    color: isActive ? "#d39d5b" : "#707070",
-                  })}
-                >
-                  LOGIN
-                </NavLink>
-              )}
+              <NavLink
+                to="/bestil"
+                style={({ isActive }) => ({
+                  color: isActive ? "#6da830" : "black",
+                  borderTop: isActive ? "solid 1px grey" : "none",
+                })}
+              >
+                Bestil beholder
+              </NavLink>
+            </li>
+            <li className="login">
+              <NavLink to="/login">
+                <img src={Login} alt="login" />
+              </NavLink>
             </li>
           </ul>
         </div>

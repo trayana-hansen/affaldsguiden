@@ -1,0 +1,5 @@
+@use "./Assets/Bundles/bundles.scss" as c;
+
+* {
+  font-family: c.$open-sans;
+}

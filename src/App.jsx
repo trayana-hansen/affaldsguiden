@@ -1,10 +1,12 @@
 import "./App.scss";
-import ApiTest from "./ApiTest";
+import NavBar from "./Components/Partials/Nav/NavBar";
+import AppRouter from "./Components/App/Router/AppRouter";
 
 function App() {
   return (
     <div className="App">
-      <ApiTest />
+      <NavBar />
+      <AppRouter />
     </div>
   );
 }

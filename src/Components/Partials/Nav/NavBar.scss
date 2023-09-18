@@ -1,0 +1,105 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
+.navigation {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  z-index: 9999;
+  padding: 0.5rem 0;
+
+  .hamburger {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+  }
+
+  .brand-name {
+    margin-left: 2rem;
+    width: 15rem;
+  }
+  .navigation-menu {
+    margin-left: 9rem;
+
+    ul {
+      display: flex;
+      padding: 0;
+
+      .login {
+        margin-left: 15rem;
+      }
+
+      li {
+        list-style-type: none;
+        margin: 0 1rem;
+
+        a {
+          text-decoration: none;
+          display: block;
+          width: 100%;
+          color: c.$nav;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .hamburger {
+      display: block;
+    }
+
+    .navigation-menu {
+      ul {
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: white;
+        display: none;
+
+        .login {
+          margin-left: 0;
+        }
+
+        li {
+          text-align: center;
+          margin: 0;
+          border: solid white 2px;
+
+          &:hover {
+            border: solid c.$nav 2px;
+            border-radius: 1rem;
+          }
+          a {
+            color: c.$nav;
+            width: 100%;
+            padding: 1.5rem 0;
+
+            &:hover {
+              color: c.$nav;
+            }
+          }
+        }
+      }
+    }
+  }
+  .navigation-menu.expanded {
+    ul {
+      display: block;
+    }
+  }
+}

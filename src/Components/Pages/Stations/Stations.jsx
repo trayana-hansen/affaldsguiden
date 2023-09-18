@@ -1,5 +1,5 @@
 import { React } from "react";
-import "./Stations.scss;";
+import "./Stations.scss";
 
 const Stations = () => {
   return <h1>Stations</h1>;
