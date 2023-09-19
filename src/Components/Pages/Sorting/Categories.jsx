@@ -4,7 +4,6 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 const Categories = () => {
-
   // State to store the cards
   const [categories, setCategories] = useState([]);
 
