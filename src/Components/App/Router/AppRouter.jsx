@@ -6,7 +6,8 @@ import NotFound from "../../Pages/NotFound/NotFound";
 import Order from "../../Pages/Order/Order";
 import Sorting from "../../Pages/Sorting/Sorting";
 import Stations from "../../Pages/Stations/Stations";
-import Categories from "../../Pages/Sorting/Categories"
+import Categories from "../../Pages/Sorting/Categories";
+import Type from "../../Pages/Sorting/Type";
 
 /* Creating a react component */
 const AppRouter = () => {
@@ -17,7 +18,9 @@ const AppRouter = () => {
       <Route path="/sortering">
         <Route index element={<Sorting />} />
         <Route path=":section_id" element={<Categories />} />
+        <Route path=":section_id/:category_id" element={<Type />} />
       </Route>
+
       <Route path="/stationer" element={<Stations />} />
       <Route path="/bestil" element={<Order />} />
       <Route path="/login" element={<Login />} />
