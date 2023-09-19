@@ -21,7 +21,8 @@ const NavBar = () => {
         </div>
         {/* Button with a onclick event from useState hook used  for  a hamburger menu */}
         <button
-          className="hamburger"
+          className="showMenu"
+          aria-label="showMenu"
           onClick={() => {
             setIsNavExpanded(!isNavExpanded);
           }}

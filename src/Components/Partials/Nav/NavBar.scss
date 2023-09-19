@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: space-around;
   position: relative;
-  background-color: white;
+  background-color: #ffffff;
   padding: 0.5rem 0;
 
-  .hamburger {
+  .showMenu {
     border: 0;
     height: 40px;
     width: 40px;
@@ -73,7 +73,7 @@
     }
   }
   @media screen and (max-width: 768px) {
-    .hamburger {
+    .showMenu {
       display: block;
     }
 
@@ -89,7 +89,7 @@
 
         .login {
           margin-left: 0;
-          
+
         }
 
         li {

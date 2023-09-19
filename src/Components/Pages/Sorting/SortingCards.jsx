@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "./SortingCards.scss";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SortingCards = () => {
   // State to store the cards
@@ -36,11 +36,12 @@ const SortingCards = () => {
             return (
               <div className="sortingCard" key={data.id}>
                 <figure>
-					<Link>
-                  <img
-                    src={`http://localhost:4000/Assets/Images/Guide/Categories/${data.filename}`}
-                    alt={data.title}
-                  /> </Link>
+                  <Link to={`/sortering/${data.id}`}>
+                    <img
+                      src={`http://localhost:4000/Assets/Images/Guide/Categories/${data.filename}`}
+                      alt={data.title}
+                    />{" "}
+                  </Link>
                   <figcaption style={{ backgroundColor: `#${data.color}` }}>
                     {data.title}
                   </figcaption>

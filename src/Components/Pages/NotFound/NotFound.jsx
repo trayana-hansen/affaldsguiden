@@ -13,12 +13,12 @@ const NotFound = () => {
       /* Rerouting to home page after the times is done */
 
       navigate("/");
-    }, 15000);
+    }, 5000);
   });
   return (
     <>
       <h1>Siden blev ikke fundet</h1>
-      <p>Du kommer tilbage til forsidet om 15 sekunder </p>
+      <p>Du kommer tilbage til forsiden om 5 sekunder</p>
     </>
   );
 };
