@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "./SortingCards.scss";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Categories = () => {
   // State to store the cards
@@ -34,7 +34,7 @@ const Categories = () => {
     <>
       <div className="sectionDetWrap">
         {details && (
-          // Render section details details if details is available
+          // Render section if details is available
           <div key={section_id} className="sectionDetFig">
             <div id="detailsSection">
               {/* Display section name */}

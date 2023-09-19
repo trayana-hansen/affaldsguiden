@@ -1,0 +1,36 @@
+.contentWrap {
+  background: rgb(216, 234, 219);
+  background: linear-gradient(180deg, rgba(216, 234, 219, 1) 0%, #ffffff 33%);
+  padding: 3rem 0;
+  .stationDetWrap {
+    margin: 1rem 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px 5px lightgrey;
+    border: solid 1px light-grey;
+    border-radius: 20px;
+
+    .stationDetDiv {
+      width: 100%;
+      .imgStation {
+        width: 100%;
+        .googleMaps {
+          width: 100%;
+          height: 250px;
+        }
+      }
+      .detailsSection {
+        padding: 2rem;
+
+        h3 {
+          font-weight: 400;
+          padding-bottom: 1rem;
+        }
+        p {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

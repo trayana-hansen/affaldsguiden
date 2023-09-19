@@ -59,7 +59,7 @@ const Login = () => {
                 />
                 {/* Validation on the data with errors */}
                 {errors.username && (
-                  <span className="error">Du skal indtaste dit brugernavn</span>
+                  <p className="error">Du skal indtaste dit brugernavn</p>
                 )}
               </div>
               <div>
@@ -70,22 +70,25 @@ const Login = () => {
                 />
                 {/* Show message if there is an error */}
                 {errors.password && (
-                  <span className="error">
+                  <p className="error">
                     Forkert adgangskode. Tjek og prøve igen
-                  </span>
+                  </p>
                 )}
               </div>
 
               <div className="submit">
-                <button type="submit" id="login">LOGIN</button>
+                <button type="submit" id="login">
+                  LOGIN
+                </button>
               </div>
             </form>
           ) : (
             // Show login data if user is logged in
-            <section>
+            <section className="profile">
               <p>
                 {`Du er logget ind som ${loginData.user.firstname} ${loginData.user.lastname} `}{" "}
-              </p>
+              </p>{" "}
+              <br />
               <button onClick={() => logOut()} id="logout">
                 LOG UD
               </button>

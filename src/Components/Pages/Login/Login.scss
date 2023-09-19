@@ -20,6 +20,11 @@
       border-radius: 5px;
       padding: 3rem;
 
+      .error {
+        color: red;
+        text-align: center;
+      }
+
       input[type="text"],
       input[type="password"] {
         padding: 10px;
@@ -48,6 +53,12 @@
       border-radius: 10%;
       display: block;
     }
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+
+    
   }
 }
 

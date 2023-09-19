@@ -8,6 +8,7 @@ import Sorting from "../../Pages/Sorting/Sorting";
 import Stations from "../../Pages/Stations/Stations";
 import Categories from "../../Pages/Sorting/Categories";
 import Type from "../../Pages/Sorting/Type";
+import StationDetails from "../../Pages/Stations/StationDetails";
 
 /* Creating a react component */
 const AppRouter = () => {
@@ -20,8 +21,10 @@ const AppRouter = () => {
         <Route path=":section_id" element={<Categories />} />
         <Route path=":section_id/:category_id" element={<Type />} />
       </Route>
-
-      <Route path="/stationer" element={<Stations />} />
+      <Route path="/stationer">
+        <Route index element={<Stations />} />
+        <Route path=":station_id" element={<StationDetails />} />
+      </Route>
       <Route path="/bestil" element={<Order />} />
       <Route path="/login" element={<Login />} />
       {/* Routing to a 404 page */}

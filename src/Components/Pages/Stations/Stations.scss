@@ -1,0 +1,44 @@
+.allStations {
+  background: rgb(216, 234, 219);
+  background: linear-gradient(
+    180deg,
+    rgba(216, 234, 219, 1) 0%,
+    #ffffff 33%
+  );
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 2rem 0;
+  padding: 4rem;
+  .singleStation {
+    width: 280px;
+    height: 320px;
+    margin: 1rem;
+    box-shadow: 5px 5px 5px 5px lightgrey;
+    border: solid 1px light-grey;
+    border-radius: 20px;
+
+    .googleMaps {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .infoStation {
+    padding: 1rem;
+    h3 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
