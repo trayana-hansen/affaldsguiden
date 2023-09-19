@@ -14,7 +14,7 @@ const NotFound = () => {
 
       navigate("/");
     }, 15000);
-  }, []);
+  });
   return (
     <>
       <h1>Siden blev ikke fundet</h1>

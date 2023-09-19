@@ -1,0 +1,71 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
+.alice-carousel {
+  .nextButton {
+    position: absolute;
+    bottom: 47%;
+    right: 6%;
+    cursor: pointer;
+  }
+  .prevButton {
+    position: absolute;
+    bottom: 47%;
+    left: 6%;
+    cursor: pointer;
+  }
+
+  .alice-carousel__stage-item {
+    img {
+      height: 90vh;
+      width: 100vw;
+    }
+  }
+}
+
+.ctoFP {
+  background-color: c.$light-green;
+  width: 40%;
+  height: 40%;
+  border-radius: 20px;
+  text-align: center;
+  margin: auto auto;
+
+  h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-top: 9%;
+  }
+  .btnCarousel {
+    padding: 0.6rem;
+    font-size: 1rem;
+    text-align: center;
+    width: 30%;
+    background-color: c.$forrest-green;
+    border: 2px solid c.$forrest-green;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .alice-carousel {
+    display: none;
+  }
+  .ctoFP {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .alice-carousel {
+    display: none;
+  }
+  .ctoFP {
+    display: none;
+  }
+}

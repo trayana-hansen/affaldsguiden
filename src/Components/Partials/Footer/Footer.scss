@@ -1,0 +1,76 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
+.waves {
+  width: 100%;
+
+  display: block;
+}
+footer {
+  padding: 2rem;
+  background-color: c.$forrest-green;
+  color: white;
+
+
+  .logoDiv {
+    width: 50%;
+
+    h2 {
+      display: inline;
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+    }
+    p {
+      width: 50%;
+      font-size: 0.8rem;
+      padding: 1rem 0;
+    }
+  }
+
+  .flexFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 3rem;
+      padding-left: 1rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      padding-right: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .logoDiv {
+      width: 100%;
+      text-align: center;
+      p {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+
+    .flexFooter {
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+
+      img {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

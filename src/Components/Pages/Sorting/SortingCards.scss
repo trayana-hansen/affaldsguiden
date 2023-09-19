@@ -1,0 +1,30 @@
+.sortingWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin: 3rem 15%;
+
+  .sortingCard {
+    box-shadow: 5px 5px 5px 5px lightgrey;
+    border: solid 1px light-grey;
+    border-radius: 5%;
+
+
+    figure {
+      figcaption {
+        padding: 0.5rem;
+        text-align: center;
+        color: white;
+      }
+      img {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+    }
+    &:hover {
+      transform: scale(1.06);
+      transition: transform 1.05s ease-in-out;
+    }
+  }
+}

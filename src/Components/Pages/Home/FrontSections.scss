@@ -1,0 +1,87 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem 20%;
+  grid-gap: 4rem;
+
+  .descriptionLead {
+    width: 100%;
+    margin-top: 20%;
+
+    h2 {
+      font-size: 2.3rem;
+      font-weight: 400;
+
+      span {
+        text-decoration-line: line-through;
+        text-decoration-thickness: 0.9rem;
+        text-decoration-color: c.$strike-through;
+      }
+    }
+    p {
+      font-size: 0.9rem;
+    }
+
+    button {
+      margin: 0.8rem;
+    }
+    .btnSolid {
+      padding: 0.6rem;
+      font-size: 1rem;
+      text-align: center;
+      background-color: c.$forrest-green;
+      border: 2px solid c.$forrest-green;
+      border-radius: 5px;
+      cursor: pointer;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    .btnWhite {
+      padding: 0.6rem;
+      font-size: 1rem;
+      text-align: center;
+      background-color: white;
+      border: 2px solid c.$darker-green;
+      border-radius: 5px;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: c.$darker-green;
+      }
+    }
+  }
+  figure {
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  section {
+    .descriptionLead {
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    grid-template-columns: 1fr;
+    .descriptionLead {
+      width: 100%;
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+}

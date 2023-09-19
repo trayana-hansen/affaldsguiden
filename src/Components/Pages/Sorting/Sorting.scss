@@ -1,0 +1,22 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
+.sortingPage {
+  background: rgb(216, 234, 219);
+  background: linear-gradient(
+    180deg,
+    rgba(216, 234, 219, 1) 0%,
+    rgba(255, 255, 255, 1) 15%
+  );
+  .sortingHeading {
+    padding-top: 2rem;
+    text-align: center;
+    color: c.$forrest-green;
+    font-weight: 400;
+    font-size: 2rem;
+
+    span {
+      display: block;
+      color: c.$darker-green;
+    }
+  }
+}

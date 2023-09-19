@@ -13,10 +13,10 @@ const NavBar = () => {
     <>
       {/* Start of the navigation component */}
       <nav className="navigation">
-        <div>
+        <div className="brand-name">
           {/* Logo */}
           <Link to="/">
-            <img className="brand-name" src={Logo} alt="logo" />
+            <img src={Logo} alt="logo" />
           </Link>
         </div>
         {/* Button with a onclick event from useState hook used  for  a hamburger menu */}
@@ -112,11 +112,13 @@ const NavBar = () => {
                 Bestil beholder
               </NavLink>
             </li>
-            <li className="login">
-              <NavLink to="/login">
-                <img src={Login} alt="login" />
-              </NavLink>
-            </li>
+            <span className="login">
+              <li>
+                <NavLink to="/login">
+                  <img src={Login} alt="login" />
+                </NavLink>
+              </li>
+            </span>
           </ul>
         </div>
       </nav>

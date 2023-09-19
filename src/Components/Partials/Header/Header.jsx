@@ -1,10 +1,13 @@
 import { React } from "react";
-import "./Header.scss;"
+import "./Header.scss";
+import NavBar from "../Nav/NavBar";
 
 const Header = () => {
-
-  return <h1>Header</h1>;
-
+  return (
+    <header>
+      <NavBar />
+    </header>
+  );
 };
 
 export default Header;

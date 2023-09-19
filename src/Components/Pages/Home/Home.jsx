@@ -1,10 +1,15 @@
 import { React } from "react";
-import "./Home.scss"
+import "./Home.scss";
+import Hero from "../../Partials/Hero/Hero";
+import FrontSections from "./FrontSections";
 
 const Home = () => {
-
-  return <h1>Home</h1>;
-
+  return (
+    <>
+      <Hero />
+      <FrontSections/>
+    </>
+  );
 };
 
 export default Home;
