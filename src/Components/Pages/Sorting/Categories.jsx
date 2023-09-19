@@ -34,7 +34,7 @@ const Categories = () => {
     <>
       <div className="sectionDetWrap">
         {details && (
-          // Render section details details if `data` is available
+          // Render section details details if details is available
           <div key={section_id} className="sectionDetFig">
             <div id="detailsSection">
               {/* Display section name */}
@@ -44,18 +44,13 @@ const Categories = () => {
         )}
 
         <h2>Categories</h2>
-        <div className="actorContainer">
-          {/* Map through actors and display their information */}
+        <div className="categoryContainer">
           {details.categories &&
             details.categories.map((category) => {
               return (
-                <div key={category.id} className="actorWrap">
-                  <figure className="actorFigure">
-                    {/* Display actor's name */}
-                    <p>{category.title}</p>
-
-                    <button>show more</button>
-                  </figure>
+                <div key={category.id} className="categoryWrap">
+                  <p>{category.title}</p>
+                  <button>show more</button>
                 </div>
               );
             })}

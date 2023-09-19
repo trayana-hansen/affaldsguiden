@@ -25,7 +25,7 @@ const FrontSections = () => {
         <div>
           <figure>
             <img
-              src={require("../../../Assets/Images/unsplashsN4u56baSB0.png")}
+              src={require("../../../Assets/Images/trashcan_metal.webp")}
               alt="trash_trashcan"
             />
           </figure>
@@ -35,7 +35,7 @@ const FrontSections = () => {
         <div>
           <figure>
             <img
-              src={require("../../../Assets/Images/groceries-packages-delivery-covid19-quarantine-shopping-concept-friendly-courier-face-mask-gloves-delivering-food-box-client-house-during-coronavirus-.png")}
+              src={require("../../../Assets/Images/recycling_trashcans.webp")}
               alt="recycling_trashcans"
             />
           </figure>
@@ -49,7 +49,8 @@ const FrontSections = () => {
             make a type specimen book. It has survived not only
           </p>
           <button className="btnSolid">
-		  <Link to="/bestil">Bestil nu</Link></button>
+            <Link to="/bestil">Bestil nu</Link>
+          </button>
         </div>
       </section>
     </>

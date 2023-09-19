@@ -11,17 +11,17 @@ const handleDragStart = (e) => e.preventDefault();
 /* Make an array with all the images to be used in the carousel*/
 const items = [
   <img
-    src={require("../../../Assets/Slideshow/affald-skov-1.jpg")}
+    src={require("../../../Assets/Slideshow/affald-skov-1.webp")}
     onDragStart={handleDragStart}
     alt="trash_forrest_img"
   />,
   <img
-    src={require("../../../Assets/Slideshow/affald-strand-2.jpg")}
+    src={require("../../../Assets/Slideshow/affald-strand-2.webp")}
     onDragStart={handleDragStart}
     alt="trash_beach_img"
   />,
   <img
-    src={require("../../../Assets/Slideshow/malerspande.jpg")}
+    src={require("../../../Assets/Slideshow/malerspande.webp")}
     onDragStart={handleDragStart}
     alt="artist_trashcan"
   />,
