@@ -1,19 +1,33 @@
 @use "../../../Assets/Bundles/bundles.scss" as c;
 
-.pageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem;
+.pageContainerLogin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem 20%;
+  grid-gap: 1rem;
 
+  .branding {
+    margin: auto auto;
+    img {
+      margin-left: 15%;
+    }
+    p {
+      text-align: center;
+    }
+  }
 
   .loginContainer {
-    padding: 20px;
     background-color: c.$loginform;
     max-width: 400px;
     width: 100%;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px lightgrey;
+
+    h1 {
+      padding-top: 10%;
+      padding-left: 10%;
+      font-weight: 400;
+    }
 
     form {
       display: flex;
@@ -28,10 +42,10 @@
         text-align: center;
       }
 
-      input[type="text"],
-      input[type="password"] {
+      input {
         padding: 10px;
         border-radius: 5px;
+        width: 25vw;
       }
 
       #login {
@@ -57,14 +71,23 @@
       display: block;
     }
   }
-  .profile {
-    display: flex;
-    align-items: center;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .loginContainer {
-    max-width: 100%;
+  .pageContainerLogin {
+    grid-template-columns: 1fr;
+    margin: auto auto;
+    .loginContainer {
+      margin-left: 15%;
+      form {
+        input {
+          width: 50vw;
+        }
+        #login,
+        #logout {
+          justify-content: center;
+        }
+      }
+    }
   }
 }

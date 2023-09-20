@@ -2,6 +2,7 @@ import { useAuth } from "../../App/Auth/AuthProvider";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./Login.scss";
+import Logo from "../../../Assets/SVG/logo_text.svg";
 
 const Login = () => {
   // Get authentication datafrom useAuth hook
@@ -43,8 +44,13 @@ const Login = () => {
 
   return (
     <>
-      <div className="pageContainer">
+      <div className="pageContainerLogin">
+        <div className="branding">
+          <img src={Logo} alt="logo" />
+          <p>Log ind på Affaldsguiden for at anmelde stationer</p>
+        </div>
         <div className="loginContainer">
+          <h1>Login</h1>
           {/* If data is incorrect: */}
           {!loginData && !loginData.username ? (
             // onSubmit event with closing
@@ -54,7 +60,7 @@ const Login = () => {
 
                 <input
                   type="text"
-                  placeholder="Indtast brugernavn"
+                  placeholder="Email"
                   {...register("username", { required: true })}
                 />
                 {/* Validation on the data with errors */}
@@ -64,7 +70,7 @@ const Login = () => {
               </div>
               <div>
                 <input
-                  placeholder="Indtast password"
+                  placeholder="Password"
                   type="password"
                   {...register("password", { required: true })}
                 />

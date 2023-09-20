@@ -8,9 +8,13 @@
   box-shadow: 5px 5px 5px 5px lightgrey;
   margin: 3rem 15%;
   background-color: #dcdcdc;
+  border-radius: 5px;
   .dataContainer {
     .info {
       padding: 2rem;
+      h2 {
+        font-weight: 400;
+      }
     }
   }
   .formContainer {
@@ -41,6 +45,7 @@
       }
 
       figcaption {
+
         p {
           padding-bottom: 0.3rem;
           color: black;
