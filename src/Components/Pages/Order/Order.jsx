@@ -3,21 +3,25 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import StepTwo from "../../../Assets/SVG/trin2.svg";
 import "./Order.scss";
+import { useEffect } from "react";
 
-/**
- * Post Component
- * Formular til at poste data til API
- */
+
+
 const Order = () => {
   const { container_id } = useParams();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted, isValid},
+    reset,
   } = useForm();
 
   const formSubmit = async (formObject) => {
+    if (!isValid) {
+      return; // Don't submit if the form is not valid
+    }
+
     const api_endpoint = "http://localhost:4000/orders";
 
     const formData = new URLSearchParams();
@@ -29,17 +33,23 @@ const Order = () => {
     formData.append("email", formObject.email);
     formData.append("phone", formObject.phone);
 
-    console.log(...formData);
+    //console.log(...formData);
 
     try {
       const result = await axios.post(api_endpoint, formData);
       if (result.data) {
         console.log(result.data);
+        reset();
       }
     } catch (error) {
       console.error(error);
     }
   };
+  useEffect(() => {
+    if (isSubmitted) {
+
+    }
+  }, [isSubmitted]);
 
   return (
     <>
@@ -146,6 +156,10 @@ const Order = () => {
             <div className="btnForm">
               <button>Send</button>
             </div>
+
+            {isSubmitted && (
+              <div className="success">Tak for din bestilling</div>
+            )}
           </form>
         </div>
       </div>

@@ -3,6 +3,7 @@ import "./StationDetails.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+
 const StationDetails = () => {
   const [stationDetails, setStationDetails] = useState([]);
   const { station_id } = useParams();
@@ -46,6 +47,7 @@ const StationDetails = () => {
           </div>
         )}
       </div>
+
     </div>
   );
 };

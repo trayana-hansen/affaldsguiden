@@ -30,6 +30,9 @@
 
   form {
     margin: 2rem;
+    .success {
+      color: c.$darker-green;
+    }
 
     input {
       width: 100%;
@@ -41,14 +44,14 @@
       border-radius: 5px;
     }
     input::placeholder {
-      font-family: 'c.$jost';
+      font-family: "c.$jost";
       font-size: 1rem;
       opacity: 0.5;
       padding-left: 0.5rem;
     }
     .btnForm {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       margin-top: 3rem;
       margin-right: 1rem;
       button {

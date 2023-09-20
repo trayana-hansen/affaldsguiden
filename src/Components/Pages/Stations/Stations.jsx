@@ -3,35 +3,28 @@ import axios from "axios";
 import "./Stations.scss";
 import { Link } from "react-router-dom";
 
+
 const Stations = () => {
-  // State to store all event data
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Construct the URL to fetch all stations with specific attributes
     const url = `
     http://localhost:4000/orgs?attributes=id,name,address,zipcode,city,longtitude, latitude`;
 
-    // Function to fetch all events' data from the API
     const getData = async () => {
       try {
-        // Send a GET request to the API endpoint
         const result = await axios.get(url);
 
-        // Log the result to the console for debugging
         console.log(result);
 
-        // Update the `allEvents` state with the received event data
         setData(result.data);
       } catch (err) {
-        // Handle any errors by logging them to the console
         console.error(err);
       }
     };
 
-    // Call the `getData` function to fetch all event data
     getData();
-  }, [setData]); // Run the effect whenever `setAllEvents` changes
+  }, [setData]);
 
   return (
     <>
