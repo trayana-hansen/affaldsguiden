@@ -1,0 +1,22 @@
+.containersWrapper {
+  margin: 1rem 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  .containerCard {
+    width: 150px;
+    height: 150px;
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+  button {
+    margin: 1rem;
+  }
+}

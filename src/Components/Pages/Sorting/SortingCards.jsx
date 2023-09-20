@@ -17,7 +17,7 @@ const SortingCards = () => {
       try {
         const result = await axios.get(url);
         console.log(result);
-        // Set the in the state
+        // Set the data in the state
         setSortingCards(result.data);
       } catch (err) {
         console.error(err);

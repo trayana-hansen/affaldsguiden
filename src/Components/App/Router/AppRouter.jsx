@@ -9,6 +9,7 @@ import Stations from "../../Pages/Stations/Stations";
 import Categories from "../../Pages/Sorting/Categories";
 import Type from "../../Pages/Sorting/Type";
 import StationDetails from "../../Pages/Stations/StationDetails";
+import ContainerOrder from "../../Pages/Order/ContainerOrder";
 
 /* Creating a react component */
 const AppRouter = () => {
@@ -25,7 +26,13 @@ const AppRouter = () => {
         <Route index element={<Stations />} />
         <Route path=":station_id" element={<StationDetails />} />
       </Route>
-      <Route path="/bestil" element={<Order />} />
+
+      <Route path="/bestil">
+        <Route index element={<ContainerOrder />} />
+        <Route path=":container_id" element={<Order />} />
+      </Route>
+
+
       <Route path="/login" element={<Login />} />
       {/* Routing to a 404 page */}
       <Route path="*" element={<NotFound />} />

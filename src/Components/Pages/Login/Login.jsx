@@ -1,4 +1,4 @@
-import { useAuth } from "../../App/Auth/Auth";
+import { useAuth } from "../../App/Auth/AuthProvider";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import "./Login.scss";
