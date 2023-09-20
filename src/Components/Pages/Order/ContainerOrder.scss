@@ -1,22 +1,41 @@
-.containersWrapper {
-  margin: 1rem 20%;
+.pageContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-
-  .containerCard {
-    width: 150px;
-    height: 150px;
-    padding: 1rem;
-
+  grid-template-columns: 1fr 2fr;
+  margin: 1rem 20%;
+  background-color: #dcdcdc;
+  .formContainer {
     img {
+      display: block;
+      object-fit: contain;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      display: block;
     }
   }
-  button {
-    margin: 1rem;
+  .dataContainer {
+    h2,
+    p {
+      margin-left: 5%;
+    }
+    .containersWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
+      margin: 1rem;
+
+      .containerCard {
+        width: 100%;
+        height: auto;
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        figure {
+          background-color: white;
+          padding: 1rem;
+        }
+      }
+    }
   }
 }

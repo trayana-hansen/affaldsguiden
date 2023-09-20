@@ -1,6 +1,5 @@
 import { React } from "react";
 import "./Hero.scss";
-import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import IconLeft from "../../../Assets/Layout/icon-arrow-left.svg";
@@ -57,15 +56,6 @@ const Hero = () => {
         /* Define the images used*/
         items={items}
       />
-      <div className="ctoFP">
-        <h1>Find og anmeld genbrugsstationer</h1>
-        <button className="btnCarousel">
-          <Link to="/stationer">Find station</Link>
-        </button>
-        <button className="btnCarousel">
-          <Link to="/login">Log ind</Link>
-        </button>
-      </div>
     </>
   );
 };

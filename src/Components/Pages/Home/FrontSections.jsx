@@ -5,6 +5,15 @@ import { Link } from "react-router-dom";
 const FrontSections = () => {
   return (
     <>
+    <div className="ctoFP">
+        <h1>Find og anmeld genbrugsstationer</h1>
+        <button className="btnCarousel">
+          <Link to="/stationer">Find station</Link>
+        </button>
+        <button className="btnCarousel">
+          <Link to="/login">Log ind</Link>
+        </button>
+      </div>
       <section>
         <div className="descriptionLead">
           <h2>
@@ -22,7 +31,7 @@ const FrontSections = () => {
             <Link to="/bestil">Bestil storskrald</Link>
           </button>
         </div>
-        <div>
+        <div className="gridReverse">
           <figure>
             <img
               src={require("../../../Assets/Images/trashcan_metal.webp")}
