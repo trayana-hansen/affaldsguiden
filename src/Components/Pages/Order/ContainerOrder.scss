@@ -1,41 +1,72 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
 .pageContainer {
+  width: 70vw;
+  height: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  margin: 1rem 20%;
+  grid-template-columns: 40% 60%;
+  box-shadow: 5px 5px 5px 5px lightgrey;
+  margin: 3rem 15%;
+
   background-color: #dcdcdc;
-  .formContainer {
-    img {
-      display: block;
-      object-fit: contain;
-      width: 100%;
-      height: 100%;
+  .dataContainer {
+    .info {
+      padding: 2rem;
     }
   }
-  .dataContainer {
-    h2,
-    p {
-      margin-left: 5%;
+  .formContainer {
+    width: 100%;
+    height: 100%;
+    background-color: c.$forrest-green;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    img {
+      padding: 1rem;
     }
-    .containersWrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 1rem;
-      margin: 1rem;
+  }
 
-      .containerCard {
-        width: 100%;
-        height: auto;
-        margin-left: 20%;
-        margin-right: 20%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
+  .containersWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    padding: 3rem 2rem;
 
-        figure {
-          background-color: white;
-          padding: 1rem;
+    .containerCard {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        text-decoration: none;
+      }
+
+      figcaption {
+        p {
+          padding-bottom: 0.3rem;
+          color: black;
         }
       }
+
+      img {
+        display: block;
+        object-fit: contain;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pageContainer {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: auto auto;
+
+
+    .containersWrapper {
+      grid-template-columns: 1fr;
+      grid-gap: 0.5rem;
     }
   }
 }
