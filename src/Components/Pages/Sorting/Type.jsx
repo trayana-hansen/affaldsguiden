@@ -23,13 +23,7 @@ const Type = () => {
   }, [section_id, category_id]);
 
   return (
-    <div>
-      {types.map((type) => (
-        <div key={type.id}>
-          <h3>{type.title}</h3>
-        </div>
-      ))}
-    </div>
+
   );
 };
 

@@ -3,7 +3,6 @@ import "./Categories.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-
 const Categories = () => {
   // State to store the cards
   const [details, setSectionDetails] = useState([]);
@@ -32,42 +31,45 @@ const Categories = () => {
   }, [section_id]);
 
   return (
-    <>
+    <div className="detailContainer">
       {details && (
         <div>
           <figure className="detailsWrap">
-            <figcaption style={{ backgroundColor: `#${details.color}` }}>
-              <h3>{details.title}</h3>
-            </figcaption>
-            <img
-              src={
-                details && details.filename
-                  ? `http://localhost:4000/Assets/Images/Guide/Categories/${details.filename}`
-                  : ""
-              }
-              alt="logoicons"
-            />
+            <div className="info">
+              <figcaption style={{ backgroundColor: `#${details.color}` }}>
+                <h2>{details.title}</h2>
+              </figcaption>
+              </div>
+              <div className="icon">
+              <img
+                src={
+                  details && details.filename
+                    ? `http://localhost:4000/Assets/Images/Guide/Categories/${details.filename}`
+                    : ""
+                }
+                alt="logoicons"
+              />
+            </div>
           </figure>
           <div>
             {details.categories &&
               details.categories.map((category) => (
                 <div key={category.id} className="categoryWrap">
+                  <div className="categoryInfo" >
                   {category.icon_filename && (
                     <img
                       src={`http://localhost:4000/Assets/Images/Guide/Icons/${category.icon_filename}`}
-                      alt=""
+                      alt={category.title}
                     />
                   )}
                   <p>{category.title}</p>
-
-                    <button>Vis mere</button>
-
+                  </div>
                 </div>
               ))}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
