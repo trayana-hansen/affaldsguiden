@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./NavBar.scss";
 import Logo from "../../../Assets/SVG/logo.svg";
-import Login from "../../../Assets/Layout/icon-unlock.svg";
+//import Login from "../../../Assets/Layout/icon-unlock.svg";
 
 const NavBar = () => {
   /* Setting up the variable to handle the state of mobile menu */
@@ -116,7 +116,10 @@ const NavBar = () => {
             <span className="login">
               <li>
                 <NavLink to="/login">
-                  <img src={Login} alt="login" />
+                  <img
+                    src={require("../../../Assets/Images/Ellipse_1.png")}
+                    alt="login"
+                  />
                 </NavLink>
               </li>
             </span>

@@ -1,7 +1,8 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../App/Auth/AuthProvider";
 import { useForm } from "react-hook-form";
+import "./PostReview.scss";
 
 const PostReview = () => {
   const { loginData } = useAuth();
@@ -11,7 +12,7 @@ const PostReview = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm();
 
   const handleRatingChange = (event) => {
@@ -49,45 +50,60 @@ const PostReview = () => {
     }
     reset();
   };
+  useEffect(() => {
+    if (isSubmitted) {
+    }
+  }, [isSubmitted]);
 
   return (
-    <>
+    <div className="reviewForm">
       <form onSubmit={handleSubmit(formSubmit)}>
-        <h2>Skriv en kommentar</h2>
-        <div>
-          <label htmlFor="rating">Rating:</label>
-          <select id="rating" value={rating} onChange={handleRatingChange}>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
+        <div className="flexBox">
+          <h2>
+            Skriv en kommentar  </h2>
+			<div className="rating">
+              <label htmlFor="rating">Rating:</label>
+              <select id="rating" value={rating} onChange={handleRatingChange}>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
+            </div>
         </div>
-        <div>
+		<div className="infoForm">
+        <div >
           <input
             type="text"
-            placeholder="Indtast en titel"
+
             {...register("subject", { required: true })}
           />
           {errors.subject && (
             <>
-              <span>Titel er required</span>
+              <span>Titel er nødvendig</span>
             </>
           )}
         </div>
         <div>
           <textarea
-            placeholder="Din kommentar"
+      
             {...register("comment", { required: true })}
           ></textarea>
-          {errors.comment && <span>Kommentar er required</span>}
+          {errors.comment && <span>Kommentar er nødvendig</span>}
         </div>
+		</div>
         <div>
-          <button>Send</button>
+          <button className="commentBtn">
+            <img
+              src={require("../../../Assets/Images/Add Comment.png")}
+              alt="button_comment"
+            />
+          </button>
         </div>
+        {isSubmitted && <div className="success">Tak for din anmeldelse</div>}
       </form>
-    </>
+    </div>
   );
 };
 

@@ -47,7 +47,6 @@ const Order = () => {
   };
   useEffect(() => {
     if (isSubmitted) {
-
     }
   }, [isSubmitted]);
 

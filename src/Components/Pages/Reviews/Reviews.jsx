@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./Reviews.scss"
+import "./Reviews.scss";
 import { useParams } from "react-router-dom";
 import UserPicture from "../../../Assets/SVG/user.svg";
-import GreenBubble from "../../../Assets/Layout/icon-speech-bubble.svg"
+
 
 const Reviews = () => {
   const [reviews, setReviews] = useState();
@@ -32,10 +32,6 @@ const Reviews = () => {
 
   return (
     <>
-    <div className="speechBubble">
-      <img src={GreenBubble} alt="" />
-      <h3>Kommenter</h3>
-    </div>
       {reviews &&
         reviews.map((review) => {
           return (
@@ -46,8 +42,8 @@ const Reviews = () => {
               <div>
                 <h3>{review.subject}</h3>
                 <div class="reviewInfo">
-                <p>{review.user.firstname}</p>
-                <p>{formatDate(review.created_at)}</p>
+                  <p>{review.user.firstname}</p>
+                  <p>{formatDate(review.created_at)}</p>
                 </div>
                 <div>
                   <p>{review.comment}</p>

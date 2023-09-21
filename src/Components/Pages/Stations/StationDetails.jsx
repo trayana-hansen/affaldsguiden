@@ -47,13 +47,12 @@ const StationDetails = () => {
               </p>
               <p>{stationDetails.country}</p>
             </div>
-            <Reviews/>
-            <div>
-            </div>
             <PostReview/>
             <div>
-
+            <Reviews/>
             </div>
+
+
           </div>
         )}
       </div>
