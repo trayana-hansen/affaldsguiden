@@ -1,0 +1,16 @@
+.reviewWrapper {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 20vw;
+  margin: 2rem;
+
+  h3 {
+	font-weight: 400;
+  }
+
+  .reviewInfo {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	padding: 0;
+  }
+}

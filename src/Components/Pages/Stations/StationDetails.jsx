@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import "./StationDetails.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Reviews from "../../Pages/Reviews/Reviews"
 
 
 const StationDetails = () => {
@@ -25,6 +26,7 @@ const StationDetails = () => {
   }, [station_id]);
 
   return (
+    <>
     <div className="contentWrap">
       <div className="stationDetWrap">
         {stationDetails && (
@@ -44,11 +46,16 @@ const StationDetails = () => {
               </p>
               <p>{stationDetails.country}</p>
             </div>
+            <Reviews/>
+            <div>
+
+            </div>
           </div>
         )}
       </div>
 
     </div>
+    </>
   );
 };
 
