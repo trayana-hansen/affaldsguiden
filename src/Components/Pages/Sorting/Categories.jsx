@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
-import "./SortingCards.scss";
+import "./Categories.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+
 
 const Categories = () => {
   // State to store the cards
@@ -32,30 +33,40 @@ const Categories = () => {
 
   return (
     <>
-      <div className="sectionDetWrap">
-        {details && (
-          // Render section if details is available
-          <div key={section_id} className="sectionDetFig">
-            <div id="detailsSection">
-              {/* Display section name */}
-              <h1>{details.title}</h1>
-            </div>
-          </div>
-        )}
-
-        <h2>Categories</h2>
-        <div className="categoryContainer">
-          {details.categories &&
-            details.categories.map((category) => {
-              return (
+      {details && (
+        <div>
+          <figure className="detailsWrap">
+            <figcaption style={{ backgroundColor: `#${details.color}` }}>
+              <h3>{details.title}</h3>
+            </figcaption>
+            <img
+              src={
+                details && details.filename
+                  ? `http://localhost:4000/Assets/Images/Guide/Categories/${details.filename}`
+                  : ""
+              }
+              alt="logoicons"
+            />
+          </figure>
+          <div>
+            {details.categories &&
+              details.categories.map((category) => (
                 <div key={category.id} className="categoryWrap">
+                  {category.icon_filename && (
+                    <img
+                      src={`http://localhost:4000/Assets/Images/Guide/Icons/${category.icon_filename}`}
+                      alt=""
+                    />
+                  )}
                   <p>{category.title}</p>
-                  <button>show more</button>
+
+                    <button>Vis mere</button>
+
                 </div>
-              );
-            })}
+              ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

@@ -1,33 +1,36 @@
-import { React, useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./Type.scss";
 
 const Type = () => {
-  // State to store the cards
-  const [type, setType] = useState([]);
+  const [types, setTypes] = useState([]);
+  const { section_id, category_id } = useParams();
 
-  const { category_id } = useParams();
-
-  // Fetch data from the API
   useEffect(() => {
-    // Define the endpoint to fetch from
-    const url = `http://localhost:4000/types/{category_id}`;
-
-    // Function to get data from endpoint
-    const getData = async () => {
+    const fetchData = async () => {
       try {
-        const result = await axios.get(url);
-        console.log(result);
-        // Set the data in the state
-        setType(result.data);
-      } catch (err) {
-        console.error(err);
+        const response = await axios.get(
+          `http://localhost:4000/types/${section_id}/${category_id}`
+        );
+        setTypes(response.data);
+      } catch (error) {
+        console.error(error);
       }
     };
 
-    // Call the function to fetch data
-    getData();
-  }, [category_id]);
+    fetchData();
+  }, [section_id, category_id]);
+
+  return (
+    <div>
+      {types.map((type) => (
+        <div key={type.id}>
+          <h3>{type.title}</h3>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Type;

@@ -43,9 +43,13 @@
       a {
         text-decoration: none;
       }
+      &:hover {
+        transform: scale(1.2);
+        transition: transform 1.05s ease-in-out;
+        border: 7px solid c.$forrest-green;
+      }
 
       figcaption {
-
         p {
           padding-bottom: 0.3rem;
           color: black;
@@ -55,7 +59,9 @@
       img {
         display: block;
         object-fit: contain;
-        padding: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: auto auto;
       }
     }
   }
