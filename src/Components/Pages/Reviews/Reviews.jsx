@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./Reviews.scss"
 import { useParams } from "react-router-dom";
 import UserPicture from "../../../Assets/SVG/user.svg";
+import GreenBubble from "../../../Assets/Layout/icon-speech-bubble.svg"
 
 const Reviews = () => {
   const [reviews, setReviews] = useState();
@@ -31,6 +32,10 @@ const Reviews = () => {
 
   return (
     <>
+    <div className="speechBubble">
+      <img src={GreenBubble} alt="" />
+      <h3>Kommenter</h3>
+    </div>
       {reviews &&
         reviews.map((review) => {
           return (
