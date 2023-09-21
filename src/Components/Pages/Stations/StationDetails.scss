@@ -1,7 +1,29 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
 .contentWrap {
   background: rgb(216, 234, 219);
   background: linear-gradient(180deg, rgba(216, 234, 219, 1) 0%, #ffffff 33%);
   padding: 3rem 0;
+
+  .notLoggedIn {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      padding: 0.6rem;
+      font-size: 1rem;
+      text-align: center;
+      background-color: c.$forrest-green;
+      border: 2px solid c.$forrest-green;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      margin: 1rem;
+
+    }
+    }
+  }
   .stationDetWrap {
     margin: 1rem 15%;
     display: flex;
@@ -33,4 +55,4 @@
       }
     }
   }
-}
+

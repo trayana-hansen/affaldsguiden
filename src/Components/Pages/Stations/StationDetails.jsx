@@ -1,14 +1,15 @@
 import { React, useState, useEffect } from "react";
 import "./StationDetails.scss";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import Reviews from "../../Pages/Reviews/Reviews"
-import PostReview from "../../Pages/Reviews/PostReview"
-
+import { useParams, Link } from "react-router-dom";
+import Reviews from "../../Pages/Reviews/Reviews";
+import PostReview from "../../Pages/Reviews/PostReview";
+import { useAuth } from "../../App/Auth/AuthProvider";
 
 const StationDetails = () => {
   const [stationDetails, setStationDetails] = useState([]);
   const { station_id } = useParams();
+  const { loginData } = useAuth();
 
   useEffect(() => {
     // Define the endpoint to fetch from
@@ -28,36 +29,46 @@ const StationDetails = () => {
 
   return (
     <>
-    <div className="contentWrap">
-      <div className="stationDetWrap">
-        {stationDetails && (
-          <div key={station_id} className="stationDetDiv">
-            <div className="imgStation">
-              <iframe
-                title="googlemapsimage"
-                className="googleMaps"
-                src={`https://maps.google.com/maps?q=${stationDetails.longtitude},${stationDetails.latitude}&hl=es;&output=embed`}
-              ></iframe>
-            </div>
-            <div className="detailsSection">
-              <h3>{stationDetails.name}</h3>
-              <p>{stationDetails.address}</p>
-              <p>
-                {stationDetails.zipcode} {stationDetails.city}
-              </p>
-              <p>{stationDetails.country}</p>
-            </div>
-            <PostReview/>
-            <div>
-            <Reviews/>
-            </div>
+      <div className="contentWrap">
+        <div className="stationDetWrap">
+          {stationDetails && (
+            <div key={station_id} className="stationDetDiv">
+              <div className="imgStation">
+                <iframe
+                  title="googlemapsimage"
+                  className="googleMaps"
+                  src={`https://maps.google.com/maps?q=${stationDetails.longtitude},${stationDetails.latitude}&hl=es;&output=embed`}
+                ></iframe>
+              </div>
+              <div className="detailsSection">
+                <h3>{stationDetails.name}</h3>
+                <p>{stationDetails.address}</p>
+                <p>
+                  {stationDetails.zipcode} {stationDetails.city}
+                </p>
+                <p>{stationDetails.country}</p>
+              </div>
+              {loginData ? (
+                <div>
+                  <PostReview />
+                </div>
+              ) : (
+                <div className="notLoggedIn">
+                  <p>Du skal være logget ind for at skrive en kommentar</p>
+                  <Link to="/login">
+                    {" "}
+                    <button id="login">LOG IND</button>{" "}
+                  </Link>
+                </div>
+              )}
 
-
-          </div>
-        )}
+              <div>
+                <Reviews />
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-
-    </div>
     </>
   );
 };
