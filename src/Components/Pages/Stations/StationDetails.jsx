@@ -3,6 +3,7 @@ import "./StationDetails.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Reviews from "../../Pages/Reviews/Reviews"
+import PostReview from "../../Pages/Reviews/PostReview"
 
 
 const StationDetails = () => {
@@ -47,6 +48,9 @@ const StationDetails = () => {
               <p>{stationDetails.country}</p>
             </div>
             <Reviews/>
+            <div>
+            </div>
+            <PostReview/>
             <div>
 
             </div>
