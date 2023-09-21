@@ -1,7 +1,16 @@
+@use "../../../Assets/Bundles/bundles.scss" as c;
+
 .reviewForm {
   margin: 1rem 20%;
   display: flex;
   justify-content: center;
+
+  .success {
+	color: c.$darker-green;
+  }
+  span {
+	color: red;
+  }
 
   .flexBox {
     display: flex;
@@ -27,7 +36,7 @@
       box-shadow: 5px 5px 5px 5px lightgrey;
       border: solid 1px lightgrey;
       border-radius: 20px;
-	  padding: 2%;
+      padding: 2%;
     }
 
     textarea {
@@ -38,19 +47,39 @@
       box-shadow: 5px 5px 5px 5px lightgrey;
       border: solid 1px lightgrey;
       border-radius: 20px;
-	  padding: 2%;
+      padding: 2%;
     }
   }
 
   .commentBtn {
-    border: none;
-    background-color: white;
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	padding: 3%;
 
 
-    img {
-      width: 50%;
-    }
+   button {
+	background-color: c.$light-green;
+	border: none;
+	color: c.$darker-green;
+	padding: 3%;
+	width: 40%;
+	box-shadow: 5px 5px 5px 5px lightgrey;
+      border: solid 1px lightgrey;
+      border-radius: 20px;
+	  display: flex;
+    justify-content: center;
+	align-items: center;
+
+	  img {
+		margin: 2%;
+	  }
+
+	  &:hover {
+		border: 2px solid c.$darker-green;
+		cursor: pointer;
+		font-weight: 600;
+	  }
+   }
   }
 }

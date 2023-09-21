@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../App/Auth/AuthProvider";
 import { useForm } from "react-hook-form";
 import "./PostReview.scss";
+import GreenBubble from "../../../Assets/Layout/icon-speech-bubble.svg";
 
 const PostReview = () => {
   const { loginData } = useAuth();
@@ -87,18 +88,16 @@ const PostReview = () => {
         </div>
         <div>
           <textarea
-      
+
             {...register("comment", { required: true })}
           ></textarea>
           {errors.comment && <span>Kommentar er nødvendig</span>}
         </div>
 		</div>
-        <div>
-          <button className="commentBtn">
-            <img
-              src={require("../../../Assets/Images/Add Comment.png")}
-              alt="button_comment"
-            />
+        <div className="commentBtn">
+          <button >
+			<img src={GreenBubble} alt="green_speech_bubble" />
+            Kommenter
           </button>
         </div>
         {isSubmitted && <div className="success">Tak for din anmeldelse</div>}
