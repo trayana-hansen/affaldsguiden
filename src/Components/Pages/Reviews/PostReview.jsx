@@ -25,7 +25,7 @@ const PostReview = () => {
 
   const formSubmit = async (data) => {
     const formData = new URLSearchParams();
-    formData.append("org_id", 1);
+    formData.append("org_id", data.org_id);
     formData.append("subject", data.subject);
     formData.append("comment", data.comment);
     formData.append("num_stars", rating);
