@@ -32,7 +32,7 @@ const PostReview = () => {
   const formSubmit = async (data) => {
     // Create form data for POST request
     const formData = new URLSearchParams();
-    formData.append("org_id", data.org_id);
+    formData.append("org_id", 1);
     formData.append("subject", data.subject);
     formData.append("comment", data.comment);
     formData.append("num_stars", rating);
@@ -63,7 +63,7 @@ const PostReview = () => {
     reset();
   };
 
-  // Effect to perform actions when the form is submitted
+  // Effect for action when the form is submitted
   useEffect(() => {
     if (isSubmitted) {
     }
