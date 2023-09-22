@@ -5,7 +5,7 @@ import "./Login.scss";
 import Logo from "../../../Assets/SVG/logo_text.svg";
 
 const Login = () => {
-  // Get authentication datafrom useAuth hook
+  // Get authentication data from useAuth hook
   const { loginData, setLoginData } = useAuth();
   const {
     register,
@@ -14,7 +14,6 @@ const Login = () => {
   } = useForm();
 
   // Create a function to set in the login
-
   // Retrieve username and password from API
 
   const formSubmit = async (form) => {

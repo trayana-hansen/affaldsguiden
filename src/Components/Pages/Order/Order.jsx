@@ -8,8 +8,11 @@ import { useEffect } from "react";
 
 
 const Order = () => {
+
+  //Retrieve the container_id from the URL
   const { container_id } = useParams();
 
+  //Set up the use of react-hook-form
   const {
     register,
     handleSubmit,
@@ -24,6 +27,8 @@ const Order = () => {
 
     const api_endpoint = "http://localhost:4000/orders";
 
+
+    //Append all info to be posted to the API
     const formData = new URLSearchParams();
     formData.append("container_id", container_id); // Use the container_id from URL params
     formData.append("fullname", formObject.fullname);
@@ -66,12 +71,15 @@ const Order = () => {
               lucilius pertinacia eu vel.
             </p>
           </div>
+
           <form onSubmit={handleSubmit(formSubmit)}>
+             {/* the container_id from url */}
             <input
               type="hidden"
               value={container_id}
               {...register("container_id")}
             />
+             {/* get all the values from the form and with error handling and validation */}
             <div>
               <input
                 placeholder="Navn"
@@ -156,6 +164,7 @@ const Order = () => {
               <button>Send</button>
             </div>
 
+                 {/* Success message */}
             {isSubmitted && (
               <div className="success">Tak for din bestilling</div>
             )}

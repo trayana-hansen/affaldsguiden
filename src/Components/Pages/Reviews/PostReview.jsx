@@ -6,10 +6,13 @@ import "./PostReview.scss";
 import GreenBubble from "../../../Assets/Layout/icon-speech-bubble.svg";
 
 const PostReview = () => {
+  // Get authentication data from the context
   const { loginData } = useAuth();
+
+  // State to track the selected rating
   const [rating, setRating] = useState(1);
 
-
+  // Initialize the form using the react-hook-form
   const {
     register,
     handleSubmit,
@@ -17,13 +20,17 @@ const PostReview = () => {
     formState: { errors, isSubmitted },
   } = useForm();
 
+  // Function to handle changes in the rating select input
   const handleRatingChange = (event) => {
     setRating(parseInt(event.target.value, 10));
   };
 
+  // Get the current date
   const currentDate = new Date();
 
+  // Function to handle form submission
   const formSubmit = async (data) => {
+    // Create form data for POST request
     const formData = new URLSearchParams();
     formData.append("org_id", data.org_id);
     formData.append("subject", data.subject);
@@ -32,6 +39,7 @@ const PostReview = () => {
     formData.append("date", currentDate.toISOString());
     console.log(...formData);
 
+    // Axios request headers with the authentication token
     const options = {
       headers: {
         Authorization: `Bearer ${loginData.access_token}`,
@@ -39,6 +47,7 @@ const PostReview = () => {
     };
 
     try {
+      // Send a POST request to the server to submit the review
       const result = await axios.post(
         `http://localhost:4000/reviews`,
         formData,
@@ -50,8 +59,11 @@ const PostReview = () => {
     } catch (err) {
       console.error(err);
     }
+    // Reset the form after submission
     reset();
   };
+
+  // Effect to perform actions when the form is submitted
   useEffect(() => {
     if (isSubmitted) {
     }

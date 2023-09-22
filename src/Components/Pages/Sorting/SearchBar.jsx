@@ -3,8 +3,9 @@ import Search from "../../../Assets/Layout/icon-search.svg";
 import "./SearchBar.scss";
 
 const SearchBar = ({ onSearch }) => {
-
   const [keyword, setKeyword] = useState("");
+
+  /* create a function to to handle the search */
 
   const handleSearch = () => {
     onSearch(keyword);
@@ -19,7 +20,7 @@ const SearchBar = ({ onSearch }) => {
               placeholder="Søg på affald"
               className="searchBox"
               value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+              onChange={(e) => setKeyword(e.target.value)}
             />
             <button
               id="searchSubmit"

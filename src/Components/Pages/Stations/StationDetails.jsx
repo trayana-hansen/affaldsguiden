@@ -48,6 +48,7 @@ const StationDetails = () => {
                 </p>
                 <p>{stationDetails.country}</p>
               </div>
+               {/* use a conditional turnary operator to handle if the user is logged in and can post a comment or get a message and a CTO to log in*/}
               {loginData ? (
                 <div>
                   <PostReview />
